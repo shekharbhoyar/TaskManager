@@ -23,7 +23,9 @@ function Login() {
           <button className="bg-blue-400 text-xl font-semibold text-black px-3 py-2 rounded">
             Login
           </button>
-          <Link to={"/signup"}>Not having an account? Signup here</Link>
+          <Link to={"/signup"} className="text-gray-400 hover:text-gray-200">
+            Not having an account? Signup here
+          </Link>
         </div>
       </div>
     </div>
