@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import Incomptasks from "./pages/Incomptasks";
 import Imptasks from "./pages/Imptasks";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route path="/incompltTasks" element={<Incomptasks />} />
             <Route path="/importantTasks" element={<Imptasks />} />
           </Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
       </div>
     </>
