@@ -1,7 +1,12 @@
 import React from "react";
+import Cards from "../components/home/Cards";
 
 function Imptasks() {
-  return <div>Important Tasks</div>;
+  return (
+    <div>
+      <Cards home={"false"} />
+    </div>
+  );
 }
 
 export default Imptasks;
