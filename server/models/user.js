@@ -15,5 +15,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  tasks: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Tasks",
+    },
+  ],
 });
 export default mongoose.model("user", userSchema);
