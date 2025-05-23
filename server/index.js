@@ -14,8 +14,8 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-app.use(express.json());
-app.use(cors());
+app.use(express.json());// this is used to take inputes inside body object from http request
+app.use(cors());// this is used to allow api request from different frontend request
 
 app.use("/userapi", userRoutes);
 
