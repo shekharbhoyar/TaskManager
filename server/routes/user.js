@@ -3,7 +3,7 @@ import User from "../models/user.js";
 import bcrypt from "bcrypt";
 export const userRoutes = Router();
 
-userRoutes.post("/signup", async (req, res) => {
+userRoutes.post("/signup", async (req, res) => {//sign up route created
   try {
     const { username } = req.body;
     const { email } = req.body;
@@ -19,7 +19,7 @@ userRoutes.post("/signup", async (req, res) => {
     if (existingEmail) {
       return res.status(400).json({ massege: "Email already exists" });
     }
-    const hashPassword = bcrypt.hash(req.body.password, 10);
+    const hashPassword = bcrypt.hash(req.body.password, 10); // we have encrypted the password
     const newUser = new User({
       username: req.body.username,
       email: req.body.email,
