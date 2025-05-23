@@ -20,7 +20,7 @@ userRoutes.post("/signup", async (req, res) => {//sign up route created
       return res.status(400).json({ massege: "Email already exists" });
     }
     const hashPassword = bcrypt.hash(req.body.password, 10); // we have encrypted the password
-    const newUser = new User({
+    const newUser = new User({//if user doesnt exist we create new user
       username: req.body.username,
       email: req.body.email,
       password: hashPassword,
