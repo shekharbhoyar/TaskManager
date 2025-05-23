@@ -32,3 +32,9 @@ userRoutes.post("/signup", async (req, res) => {//sign up route created
     res.status(400).json({ massege: "Internal server error" });
   }
 });
+//so the process for signup is creating user and save it.
+//1.we get the username,email, password as a http request then it get stored in req object.
+//2.we access it i.e. req.body 
+//3.after accessing we check whether the user exist or not if it exist then it gives 400 code 
+//4.if it doesnt exist the we create new user 
+//5.and then we save that user
