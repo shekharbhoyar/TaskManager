@@ -7,7 +7,7 @@ userRoutes.post("/signup", async (req, res) => {//sign up route created
   try {
     const { username } = req.body;//whichever request we sent is get stored in req object and we can use it like this
     const { email } = req.body;
-    const existingUser = await User.findOne({ username: username });
+    const existingUser = await User.findOne({ username: username });// first we check whether user exist or not
     const existingEmail = await User.findOne({ email: email });
     if (existingUser) {
       return res.status(400).json({ massege: "Username already exist" });
