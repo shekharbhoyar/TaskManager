@@ -9,7 +9,7 @@ function Home() {
         <Sidebar />
       </div>
       <div className=" w-5/6 border border-gray-500 rounded-xl p-4">
-        <Outlet />
+        <Outlet />// we use this outlet component to render 
       </div>
     </div>
   );
