@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Login() { // login page
   return (
     <div className="h-[98vh] flex items-center justify-center">
       <div className="p-4 w-2/6 rounded bg-gray-800">
