@@ -15,7 +15,8 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 app.use(express.json());// this is used to take inputes inside body object from http request
-app.use(cors());// this is used to allow api request from different frontend request
+app.use(cors());// this is used to allow api request from different frontend request,we can give permission to others to access this api.
+          //cross origin resorce sharing
 
 app.use("/userapi", userRoutes);
 
