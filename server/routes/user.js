@@ -5,7 +5,7 @@ export const userRoutes = Router();
 
 userRoutes.post("/signup", async (req, res) => {//sign up route created
   try {
-    const { username } = req.body;
+    const { username } = req.body;//whichever request we sent is get stored in req object and we can use it like this
     const { email } = req.body;
     const existingUser = await User.findOne({ username: username });
     const existingEmail = await User.findOne({ email: email });
