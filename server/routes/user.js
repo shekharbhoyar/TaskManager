@@ -9,7 +9,7 @@ userRoutes.post("/signup", async (req, res) => {//sign up route created
     const { email } = req.body;
     const existingUser = await User.findOne({ username: username });// first we check whether user exist or not
     const existingEmail = await User.findOne({ email: email });
-    if (existingUser) {
+    if (existingUser) {// here we applied a condition to check whether user exist or not
       return res.status(400).json({ massege: "Username already exist" });
     } else if (username.length < 4) {
       return res
