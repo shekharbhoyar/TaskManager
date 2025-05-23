@@ -25,7 +25,7 @@ userRoutes.post("/signup", async (req, res) => {//sign up route created
       email: req.body.email,
       password: hashPassword,
     });
-    await newUser.save();
+    await newUser.save();//saved new user
     return res.status(200).json({ massege: "signin successfully" });
   } catch (err) {
     console.log(err);
