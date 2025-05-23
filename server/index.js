@@ -10,13 +10,13 @@ const app = express();
 const PORT = 3000;
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URI) //we can read .env file by using this way
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-app.use(express.json());// this is used to take inputes inside body object from http request
-app.use(cors());// this is used to allow api request from different frontend request,we can give permission to others to access this api.
-          //cross origin resorce sharing
+app.use(express.json()); // this is used to take inputes inside body object from http request
+app.use(cors()); // this is used to allow api request from different frontend request,we can give permission to others to access this api.
+//cross origin resorce sharing
 
 app.use("/userapi", userRoutes);
 
