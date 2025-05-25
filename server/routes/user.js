@@ -54,6 +54,7 @@ userRoutes.get("/login", async (req, res) => {
     if (data) {
       const authclaims = [{ name: username }, { jti: jwt.sign({}, "csb") }];
       const token = jwt.sign({ authclaims }, "csb", { expiresIn: "2d" });
+      res.status(200).json({id:existingUser._id,token:token})
     } else {
       return res.status(400).json({ massege: "invalid credential" });
     }
