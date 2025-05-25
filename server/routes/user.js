@@ -42,3 +42,20 @@ userRoutes.post("/signup", async (req, res) => {
 //4.if it doesnt exist the we create new user
 //5.and then we save that user
 //6. we used try catch block here.
+
+userRoutes.get("/login", async (req, res) => {
+  const { username } = req.body;
+  const existingUser = await User.findOne({ username: username });
+  if (!existingUser) {
+    // here we applied a condition to check whether user exist or not
+    return res.status(400).json({ massege: "Username or password incorrect" });
+  }
+  bcrypt.compare(password, existingUser.password, (err, data) => {
+    if (data) {
+      const authclaims = [{ name: username }, { jti: jwt.sign({}, "csb") }];
+      const token = jwt.sign({ authclaims }, "csb", { expiresIn: "2d" });
+    } else {
+      return res.status(400).json({ massege: "invalid credential" });
+    }
+  });
+});
